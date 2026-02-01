@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Krill Systems</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body { 
+            background: #f4f7f6; 
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            margin: 0;
+        }
+
+        .login-card { 
+            width: 400px; 
+            border: none; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            background: white; 
+            padding: 40px;
+        }
+
+        /* Design Details */
+        .brand-logo { color: #005f73; font-size: 2rem; font-weight: 800; }
+        .form-control { border-radius: 8px; padding: 12px; }
+
+        /* Button Designs */
+        .btn-admin { 
+            background-color: #343a40; 
+            color: white; 
+            border: none; 
+            border-radius: 8px; 
+            font-weight: 600; 
+            transition: 0.3s;
+        }
+        .btn-admin:hover { background-color: #23272b; color: white; transform: translateY(-2px); }
+
+        .btn-tenant { 
+            background-color: #005f73; 
+            color: white; 
+            border: none; 
+            border-radius: 8px; 
+            font-weight: 600; 
+            transition: 0.3s;
+        }
+        .btn-tenant:hover { background-color: #004d5d; color: white; transform: translateY(-2px); }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+            color: #ccc;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+        .divider::before, .divider::after { content: ''; flex: 1; border-bottom: 1px solid #eee; }
+        .divider:not(:empty)::before { margin-right: .5em; }
+        .divider:not(:empty)::after { margin-left: .5em; }
+    </style>
+</head>
+<body>
+
+    <div class="card login-card">
+        <div class="text-center mb-4">
+            <div class="brand-logo"><i class="fa-solid fa-shrimp"></i> KRILL</div>
+            <p class="text-muted fw-bold small">SYSTEMS PORTAL</p>
+        </div>
+        
+        <form id="loginForm">
+            <div class="mb-3">
+                <label class="form-label small fw-bold text-secondary">USERNAME</label>
+                <input type="text" class="form-control" placeholder="Enter username" required>
+            </div>
+            <div class="mb-4">
+                <label class="form-label small fw-bold text-secondary">PASSWORD</label>
+                <input type="password" class="form-control" placeholder="••••••••" required>
+            </div>
+
+            <div class="divider">CHOOSE YOUR PORTAL</div>
+
+            <div class="d-grid gap-3">
+                <button type="button" onclick="redirectUser('admin')" class="btn btn-admin py-2">
+                    <i class="fa-solid fa-user-shield me-2"></i>Login as Admin
+                </button>
+                
+                <button type="button" onclick="redirectUser('tenant')" class="btn btn-tenant py-2">
+                    <i class="fa-solid fa-user me-2"></i>Login as Tenant
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function redirectUser(role) {
+            if (role === 'admin') {
+                // Correct path into your 'admin' folder
+                window.location.href = 'admin/admin_dashboard.html';
+            } else if (role === 'tenant') {
+                // Correct path into your 'tenant' folder
+                window.location.href = 'tenant/tenant_dashboard.html';
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
