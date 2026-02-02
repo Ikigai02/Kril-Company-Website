@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { background-color: #f4f7f6; font-family: 'Segoe UI', sans-serif; }
-        
-        /* Fixed Sidebar Design */
         #sidebar { 
             min-width: 250px; 
             max-width: 250px; 
@@ -18,13 +16,11 @@
             color: white; 
             position: fixed; 
         }
-        
         #sidebar .nav-link { color: #c2c7d0; transition: 0.3s; padding: 12px 20px; }
         #sidebar .nav-link:hover, #sidebar .nav-link.active { 
             color: white; 
             background: rgba(255,255,255,0.1); 
         }
-
         .main-content { margin-left: 250px; flex-grow: 1; padding: 30px; }
         .card { border: none; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         .search-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 25px; }
@@ -37,14 +33,12 @@
             <h4 class="fw-bold"><i class="fa-solid fa-shrimp me-2"></i>KRILL ADMIN</h4>
             <hr class="text-secondary">
         </div>
-        
         <ul class="nav nav-pills flex-column mb-auto">
             <li><a href="admin_dashboard.html" class="nav-link"><i class="fa-solid fa-gauge me-2"></i> Dashboard</a></li>
             <li><a href="admin_tenants.html" class="nav-link"><i class="fa-solid fa-users me-2"></i> List of Tenants</a></li>
             <li><a href="admin_payments.html" class="nav-link active"><i class="fa-solid fa-file-invoice-dollar me-2"></i> Payments</a></li>
             <li><a href="admin_units.html" class="nav-link"><i class="fa-solid fa-house-chimney me-2"></i> Rental Units</a></li>
         </ul>
-        
         <hr class="text-secondary">
         <div class="pb-3 text-center">
             <a href="login_page.html" class="nav-link text-danger fw-bold">
@@ -109,7 +103,7 @@
                 <tbody>
                     <tr>
                         <td class="ps-3">
-                            <div class="fw-bold">Ahmad Zaki</div>
+                            <a href="admin_tenants_detail.html" class="text-decoration-none text-dark fw-bold">Ahmad Zaki</a>
                             <div class="small text-muted">Unit A-12</div>
                         </td>
                         <td class="fw-bold text-success">RM 1,200.00</td>
