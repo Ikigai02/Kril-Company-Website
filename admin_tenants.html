@@ -8,8 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { background-color: #f4f7f6; }
-        /* Sidebar Design - Kept from your original */
-        #sidebar { min-width: 250px; max-width: 250px; background: #343a40; min-height: 100vh; color: white; position: fixed; }
+        /* Sidebar Design - Fixed at the left */
+        #sidebar { 
+            min-width: 250px; 
+            max-width: 250px; 
+            background: #343a40; 
+            min-height: 100vh; 
+            color: white; 
+            position: fixed; 
+        }
         #sidebar .nav-link { color: #c2c7d0; transition: 0.3s; }
         #sidebar .nav-link:hover, #sidebar .nav-link.active { color: white; background: rgba(255,255,255,0.1); }
         
@@ -38,7 +45,7 @@
             </li>
         </ul>
         <hr class="text-secondary">
-        <div class="pb-3">
+        <div class="pb-3 text-center">
             <a href="login_page.html" class="nav-link text-danger fw-bold">
                 <i class="fa-solid fa-right-from-bracket me-2"></i> Logout
             </a>
@@ -90,4 +97,11 @@
                     <tr>
                         <td class="ps-3">
                             <a href="admin_tenants_detail.html" class="text-decoration-none text-dark">
-                                <div class="fw-bold">Ahmad
+                                <div class="fw-bold">Ahmad Zaki</div>
+                            </a>
+                            <small class="text-muted">Joined: Jan 2026</small>
+                        </td>
+                        <td>950101-14-XXXX</td>
+                        <td>+6012-3456789</td>
+                        <td>Unit A-12, Damai Residence</td>
+                        <td><span class="badge bg-success">Active</span></td>
