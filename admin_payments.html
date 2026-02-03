@@ -24,8 +24,9 @@
         }
         
         /* CONTENT AREA */
-        .main-content { margin-left: 250px; flex-grow: 1; padding: 20px; }
+        .main-content { margin-left: 250px; flex-grow: 1; padding: 30px; }
         .card { border: none; box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); border-radius: 10px; }
+        .table thead { background-color: #f8f9fa; }
     </style>
 </head>
 <body class="d-flex">
@@ -67,11 +68,30 @@
 
     <div class="main-content w-100">
         <h2 class="fw-bold mb-4">Payment Transactions</h2>
-        <div class="card p-3">
-            <table class="table table-hover align-middle">
+
+        <div class="card p-3 mb-4">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="Search by Name or IC...">
+                </div>
+                <div class="col-md-2">
+                    <select class="form-select">
+                        <option selected>All Units</option>
+                        <option>Unit A-12</option>
+                        <option>Unit B-05</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-outline-secondary w-100">Filter</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card p-0 overflow-hidden">
+            <table class="table table-hover align-middle mb-0">
                 <thead class="table-light">
                     <tr>
-                        <th>Tenant & Unit</th>
+                        <th class="ps-3">Tenant & Unit</th>
                         <th>Amount</th>
                         <th>Status</th>
                         <th class="text-center">Action</th>
@@ -79,7 +99,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>
+                        <td class="ps-3">
                             <div class="fw-bold">Ahmad Zaki</div>
                             <div class="small text-muted">Unit A-12</div>
                         </td>
