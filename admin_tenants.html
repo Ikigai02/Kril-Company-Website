@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tenants List - Krill Systems</title>
+    <title>Payments | Krill Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { background-color: #f4f7f6; }
-        /* Sidebar Design - Kept from your original */
-        #sidebar { min-width: 250px; max-width: 250px; background: #343a40; min-height: 100vh; color: white; position: fixed; }
+        /* SIDEBAR UI MATCHED TO DASHBOARD */
+        #sidebar { 
+            min-width: 250px; 
+            max-width: 250px; 
+            background: #343a40; 
+            min-height: 100vh; 
+            color: white; 
+            position: fixed; 
+        }
         #sidebar .nav-link { color: #c2c7d0; transition: 0.3s; }
-        
-        /* HIGHLIGHT FEATURE: Added to show active page */
         #sidebar .nav-link:hover, #sidebar .nav-link.active { 
             color: white; 
             background: rgba(255,255,255,0.1); 
         }
         
-        /* Content Design */
+        /* CONTENT AREA */
         .main-content { margin-left: 250px; flex-grow: 1; padding: 30px; }
         .card { border: none; box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); border-radius: 10px; }
         .table thead { background-color: #f8f9fa; }
@@ -28,21 +33,32 @@
 
     <div id="sidebar" class="d-flex flex-column p-3">
         <h4 class="text-center mb-4"><i class="fa-solid fa-shrimp me-2"></i>KRILL ADMIN</h4>
+        
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="admin_dashboard.html" class="nav-link text-white"><i class="fa-solid fa-gauge me-2"></i> Dashboard</a>
+                <a href="admin_dashboard.html" class="nav-link text-white">
+                    <i class="fa-solid fa-gauge me-2"></i> Dashboard
+                </a>
             </li>
             <li>
-                <a href="admin_tenants.html" class="nav-link text-white active"><i class="fa-solid fa-users me-2"></i> List of Tenants</a>
+                <a href="admin_tenants.html" class="nav-link text-white">
+                    <i class="fa-solid fa-users me-2"></i> List of Tenants
+                </a>
             </li>
             <li>
-                <a href="admin_payments.html" class="nav-link text-white"><i class="fa-solid fa-file-invoice-dollar me-2"></i> Payments</a>
+                <a href="admin_payments.html" class="nav-link text-white active">
+                    <i class="fa-solid fa-file-invoice-dollar me-2"></i> Payments
+                </a>
             </li>
             <li>
-                <a href="admin_units.html" class="nav-link text-white"><i class="fa-solid fa-house-chimney me-2"></i> Rental Units</a>
+                <a href="admin_units.html" class="nav-link text-white">
+                    <i class="fa-solid fa-house-chimney me-2"></i> Rental Units
+                </a>
             </li>
         </ul>
+
         <hr class="text-secondary">
+        
         <div class="pb-3">
             <a href="login_page.html" class="nav-link text-danger fw-bold">
                 <i class="fa-solid fa-right-from-bracket me-2"></i> Logout
@@ -51,15 +67,7 @@
     </div>
 
     <div class="main-content w-100">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <div>
-                <h2 class="fw-bold">Tenant Master Data</h2>
-                <p class="text-muted">Manage all tenant records and personal information.</p>
-            </div>
-            <button class="btn btn-primary shadow-sm" data-bs-toggle="modal" data-bs-target="#addTenantModal">
-                <i class="fa-solid fa-plus me-1"></i> Add New Tenant
-            </button>
-        </div>
+        <h2 class="fw-bold mb-4">Payment Transactions</h2>
 
         <div class="card p-3 mb-4">
             <div class="row g-3">
@@ -83,66 +91,26 @@
             <table class="table table-hover align-middle mb-0">
                 <thead class="table-light">
                     <tr>
-                        <th class="ps-3">Name</th>
-                        <th>IC Number</th>
-                        <th>Phone</th>
-                        <th>Rental Unit</th>
+                        <th class="ps-3">Tenant & Unit</th>
+                        <th>Amount</th>
                         <th>Status</th>
-                        <th class="text-center">Actions</th>
+                        <th class="text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td class="ps-3">
-                            <a href="admin_tenants_detail.html" class="text-decoration-none text-dark">
-                                <div class="fw-bold">Ahmad Zaki</div>
-                            </a>
-                            <small class="text-muted">Joined: Jan 2026</small>
+                            <div class="fw-bold">Ahmad Zaki</div>
+                            <div class="small text-muted">Unit A-12</div>
                         </td>
-                        <td>950101-14-XXXX</td>
-                        <td>+6012-3456789</td>
-                        <td>Unit A-12, Damai Residence</td>
-                        <td><span class="badge bg-success">Active</span></td>
+                        <td class="fw-bold text-success">RM 1,200.00</td>
+                        <td><span class="badge bg-success">Verified</span></td>
                         <td class="text-center">
-                            <button class="btn btn-sm btn-info text-white" title="Preview"><i class="fa-solid fa-eye"></i></button>
-                            <button class="btn btn-sm btn-warning text-white" title="Edit"><i class="fa-solid fa-pen"></i></button>
-                            <button class="btn btn-sm btn-danger" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                            <button class="btn btn-sm btn-outline-primary">View Receipt</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
-        </div>
-    </div>
-
-    <div class="modal fade" id="addTenantModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold">Register New Tenant</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label class="form-label">Full Name</label>
-                            <input type="text" class="form-control" placeholder="Enter Full Name">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">IC Number</label>
-                            <input type="text" class="form-control" placeholder="000000-00-0000">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Rental Address (Unit)</label>
-                            <input type="text" class="form-control" placeholder="e.g. Unit A-12">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Upload Signed Contract</label>
-                            <input type="file" class="form-control">
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Save Master Data</button>
-                    </form>
-                </div>
-            </div>
         </div>
     </div>
 
