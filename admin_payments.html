@@ -7,45 +7,29 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { background-color: #f4f7f6; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: #f4f7f6; }
         
-        /* Standardized Left-Aligned Sidebar */
-         <div id="sidebar" class="d-flex flex-column p-3">
-        <h4 class="text-center mb-4"><i class="fa-solid fa-shrimp me-2"></i>KRILL ADMIN</h4>
-        <ul class="nav nav-pills flex-column mb-auto">
-            <li class="nav-item">
-                <a href="admin_dashboard.html" class="nav-link text-white active">
-                    <i class="fa-solid fa-gauge me-2"></i> Dashboard
-                </a>
-            </li>
-            <li>
-                <a href="admin_tenants.html" class="nav-link text-white">
-                    <i class="fa-solid fa-users me-2"></i> List of Tenants
-                </a>
-            </li>
-            <li>
-                <a href="admin_payments.html" class="nav-link text-white">
-                    <i class="fa-solid fa-file-invoice-dollar me-2"></i> Payments
-                </a>
-            </li>
-            <li>
-                <a href="admin_units.html" class="nav-link text-white">
-                    <i class="fa-solid fa-house-chimney me-2"></i> Rental Units
-                </a>
-            </li>
-        </ul>
-        <hr class="text-secondary">
-        <div class="pb-3">
-            <a href="login_page.html" class="nav-link text-danger fw-bold">
-                <i class="fa-solid fa-right-from-bracket me-2"></i> Logout
-            </a>
-        </div>
-    </div>
-
+        /* SIDEBAR DESIGN COPIED FROM DASHBOARD */
+        #sidebar { 
+            min-width: 250px; 
+            max-width: 250px; 
+            background: #343a40; 
+            min-height: 100vh; 
+            color: white; 
+            position: fixed; /* Ensures sidebar stays while scrolling table */
+        }
         
-        .main-content { margin-left: 250px; flex-grow: 1; padding: 30px; }
-        .card { border: none; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .table thead { background-color: #f8f9fa; }
+        #sidebar .nav-link { color: #c2c7d0; transition: 0.3s; }
+        
+        /* HIGHLIGHT FEATURE */
+        #sidebar .nav-link:hover, #sidebar .nav-link.active { 
+            color: white; 
+            background: rgba(255,255,255,0.1); 
+        }
+        
+        /* CONTENT AREA ADJUSTED FOR FIXED SIDEBAR */
+        .main-content { margin-left: 250px; flex-grow: 1; padding: 20px; }
+        .card { border: none; box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); border-radius: 10px; }
     </style>
 </head>
 <body class="d-flex">
@@ -74,65 +58,60 @@
                 </a>
             </li>
         </ul>
-
         <hr class="text-secondary">
-        
-        <div class="pb-3 ps-2">
+        <div class="pb-3">
             <a href="login_page.html" class="nav-link text-danger fw-bold">
                 <i class="fa-solid fa-right-from-bracket me-2"></i> Logout
             </a>
         </div>
     </div>
 
-    <div class="main-content w-100">
-        <h2 class="fw-bold mb-4">Payment Transactions</h2>
+    <div class="main-content">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="fw-bold">Payment Transactions</h2>
+            <div class="text-muted small">Updated: Feb 2026</div>
+        </div>
 
         <div class="card p-3 mb-4">
             <div class="row g-3">
-                <div class="col-md-4">
-                    <input type="text" class="form-control" placeholder="Search by Tenant Name or IC...">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Search by Tenant Name or Unit...">
                 </div>
                 <div class="col-md-3">
                     <select class="form-select">
-                        <option selected>All Payment Status</option>
+                        <option selected>Status: All</option>
                         <option>Verified</option>
                         <option>Pending</option>
-                        <option>Rejected</option>
                     </select>
                 </div>
                 <div class="col-md-3">
-                    <select class="form-select">
-                        <option selected>Filter by Unit</option>
-                        <option>Unit A-12</option>
-                        <option>Unit B-05</option>
-                    </select>
-                </div>
-                <div class="col-md-2">
                     <button class="btn btn-outline-secondary w-100">Filter</button>
                 </div>
             </div>
         </div>
 
-        <div class="card p-0 overflow-hidden">
-            <table class="table table-hover align-middle mb-0">
+        <div class="card p-3">
+            <table class="table table-hover align-middle">
                 <thead class="table-light">
                     <tr>
-                        <th class="ps-3">Tenant & Unit</th>
+                        <th>Tenant & Unit</th>
                         <th>Amount</th>
+                        <th>Date</th>
                         <th>Status</th>
                         <th class="text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="ps-3">
+                        <td>
                             <div class="fw-bold">Ahmad Zaki</div>
                             <div class="small text-muted">Unit A-12</div>
                         </td>
-                        <td class="fw-bold text-success">RM 1,200.00</td>
+                        <td class="text-success fw-bold">RM 1,200.00</td>
+                        <td>02 Feb 2026</td>
                         <td><span class="badge bg-success">Verified</span></td>
                         <td class="text-center">
-                            <button class="btn btn-sm btn-outline-primary"><i class="fa-solid fa-eye me-1"></i>View Receipt</button>
+                            <button class="btn btn-sm btn-outline-primary">View Receipt</button>
                         </td>
                     </tr>
                 </tbody>
@@ -143,5 +122,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
