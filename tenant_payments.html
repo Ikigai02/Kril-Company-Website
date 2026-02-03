@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { background-color: #f4f7f6; font-family: 'Segoe UI', sans-serif; }
+        
+        /* Sidebar Design - Standardized */
         #sidebar { 
             min-width: 250px; 
             max-width: 250px; 
@@ -18,22 +20,27 @@
             display: flex; 
             flex-direction: column; 
         }
+        
         #sidebar .nav-link { color: #c2c7d0; transition: 0.3s; padding: 12px 20px; }
-        #sidebar .nav-link:hover, #sidebar .nav-link.active { color: white; background: rgba(255,255,255,0.1); }
+        #sidebar .nav-link:hover, #sidebar .nav-link.active { 
+            color: white; 
+            background: rgba(255,255,255,0.1); 
+        }
+
+        /* Issue 1 Fix: Standardized Brand Section Spacing */
+        .brand-section {
+            padding: 20px 0; /* Vertical padding to match Admin sidebar gap */
+            margin-bottom: 10px;
+        }
+
         .main-content { margin-left: 250px; flex-grow: 1; padding: 30px; }
         .card { border: none; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        
-        /* Spacing for the header matching your image */
-        .brand-section {
-            padding: 10px 5px; /* Adjusts the "gap" you mentioned */
-            margin-bottom: 20px;
-        }
     </style>
 </head>
 <body class="d-flex">
 
     <div id="sidebar" class="p-3">
-        <div class="brand-section">
+        <div class="brand-section text-center">
             <h4 class="fw-bold m-0"><i class="fa-solid fa-shrimp me-2"></i>TENANT PORT</h4>
         </div>
         
@@ -46,7 +53,7 @@
         
         <hr class="text-secondary">
         
-        <div class="pb-3">
+        <div class="pb-3 text-center">
             <a href="login_page.html" class="nav-link text-danger fw-bold">
                 <i class="fa-solid fa-right-from-bracket me-2"></i> Logout
             </a>
@@ -55,6 +62,7 @@
 
     <div class="main-content w-100">
         <h2 class="fw-bold mb-4">My Payment History</h2>
+        
         <div class="card p-0 overflow-hidden">
             <table class="table table-hover align-middle mb-0">
                 <thead class="table-light">
@@ -72,14 +80,18 @@
                         <td class="fw-bold text-success">RM 1,200.00</td>
                         <td>02 Jan 2026</td>
                         <td><span class="badge bg-success">Verified</span></td>
-                        <td class="text-center"><button class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-eye"></i></button></td>
+                        <td class="text-center">
+                            <button class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-eye"></i></button>
+                        </td>
                     </tr>
                     <tr>
                         <td class="ps-3 fw-bold">February 2026</td>
                         <td class="fw-bold text-danger">RM 1,200.00</td>
                         <td>01 Feb 2026</td>
                         <td><span class="badge bg-warning text-dark">Pending</span></td>
-                        <td class="text-center"><button class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-eye"></i></button></td>
+                        <td class="text-center">
+                            <button class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-eye"></i></button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
